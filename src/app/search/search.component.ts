@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.searchService.getFlightData().subscribe((data)=>{
       this.flightData = data.json();
+       this.copyFlightData = this.flightData.slice(0);
     })
   }
   selectType(type){
